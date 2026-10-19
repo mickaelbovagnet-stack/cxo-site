@@ -121,9 +121,10 @@
   .hero-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 20%; max-height: 560px; }
   @media (min-width: 900px) {
     .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: stretch; }
-    .hero-text { padding-block: 112px 96px; padding-right: 48px; justify-content: center; }
-    .hero-photo { margin-left: 0; margin-right: calc(-1 * max(var(--gutter), env(safe-area-inset-right, 0px)) - max(0px, (100vw - var(--max)) / 2)); }
-    .hero-photo img { height: 100%; max-height: none; aspect-ratio: auto; min-height: 560px; }
+    .hero-grid { min-height: clamp(560px, calc(100vh - 77px), 760px); }
+    .hero-text { padding-block: 72px; padding-right: 48px; justify-content: center; }
+    .hero-photo { margin: 0; position: relative; min-height: 560px; }
+    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: cover; object-position: 50% 22%; }
   }
 
   /* Stats */
